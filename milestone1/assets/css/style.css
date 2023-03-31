@@ -11,7 +11,7 @@
     --background-body: #d9dbd4;
     --top-headers: #eaeaea;
     --headers-icons: #b1b1b1;
-    --desktop-notifications: #8edafc;
+    --desktop-notifications: #61b7df;
     --toggle-desktop-notifications: #537b8e;
     --user-messages: #d5f9ba;
     --active-chat-user: #e9ebeb;
@@ -46,7 +46,7 @@
 .header-left {
     height: 60px;
     background-color: var(--top-headers);
-    border: 1px solid var(--headers-icons) ;
+    border-right: 1px solid var(--headers-icons) ;
 } 
 
 .myprofile-img {
@@ -57,5 +57,26 @@
 .right-profile-icons i {
     padding-right: 1rem;
     color: var(--headers-icons);
+}
+
+.desktop-notifications {
+    background-color: var(--desktop-notifications);
+}
+
+.bell-icon {
+    width: 40px;
+    color: var(--desktop-notifications);
+    background-color: var(--active-chat-user);
+    border-radius: 100%;
+}
+
+.desktop-notifications p {
+    color: var(--toggle-desktop-notifications);
+    text-decoration: underline;
+    font-size: 0.7rem;
+}
+
+.desktop-notifications h6 {
+    font-size: 0.9rem;
 }
 /* #endregion left */
