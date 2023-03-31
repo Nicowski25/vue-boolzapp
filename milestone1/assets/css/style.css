@@ -113,7 +113,7 @@
 .active-profile-header {
     background-color: var(--top-headers);
     height: 60px;
-    border-left: 1px solid var(--headers-icons) ;
+    border-left: 2px solid var(--background-body) ;
 }
 
 .active-profile-utilities i {
@@ -123,5 +123,14 @@
 
 .active-chat {
     height: calc(100% - 120px);
+}
+
+.message-bar {
+    height: 60px;
+    background-color: var(--write-message-bar);
+}
+
+.message-bar i {
+    color: var(--headers-icons);
 }
 /* #endregion right */
