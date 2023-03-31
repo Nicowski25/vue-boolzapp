@@ -79,4 +79,9 @@
 .desktop-notifications h6 {
     font-size: 0.9rem;
 }
+
+.searchbar {
+    padding: 0.5rem;
+    background-color: var(--write-message-bar);
+}
 /* #endregion left */
