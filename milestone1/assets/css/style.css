@@ -42,3 +42,20 @@
 
 /* #endregion main classes */
 
+/* #region left */
+.header-left {
+    height: 60px;
+    background-color: var(--top-headers);
+    border: 1px solid var(--headers-icons) ;
+} 
+
+.myprofile-img {
+    height: 50px;
+    border-radius: 100%;
+}
+
+.right-profile-icons i {
+    padding-right: 1rem;
+    color: var(--headers-icons);
+}
+/* #endregion left */
