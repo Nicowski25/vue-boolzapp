@@ -18,6 +18,18 @@
     --write-message-bar: #f3eeea;
 }
 
+.color-shadegray {
+    color: var(--toggle-desktop-notifications);
+}
+
+.fs-07 {
+    font-size: 0.7rem;
+}
+
+.fs-08 {
+    font-size: 0.8rem;
+}
+
 /* #endregion utility */
 
 /* #region main classes */
@@ -49,7 +61,7 @@
     border-right: 1px solid var(--headers-icons) ;
 } 
 
-.myprofile-img {
+.profile-img {
     height: 50px;
     border-radius: 100%;
 }
@@ -73,7 +85,6 @@
 .desktop-notifications p {
     color: var(--toggle-desktop-notifications);
     text-decoration: underline;
-    font-size: 0.7rem;
 }
 
 .desktop-notifications h6 {
@@ -83,5 +94,13 @@
 .searchbar {
     padding: 0.5rem;
     background-color: var(--write-message-bar);
+}
+
+.chats {
+    overflow-y: scroll;
+}
+
+.chat {
+    background-color: var(--active-chat-user);
 }
 /* #endregion left */
