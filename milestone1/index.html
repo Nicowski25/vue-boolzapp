@@ -18,7 +18,7 @@
     
     <div id="app" class="main-container container p-0">
 
-        <div id="left"> 
+        <div id="left" class="mh-100"> 
             <!-- left header and icons -->
             <div class="header-left d-flex justify-content-between">
                 <div class="left-profile d-flex align-items-center w-50">
@@ -51,13 +51,13 @@
             </div>
             <!-- chats -->
             <div class="chats">
-                <div class="chat d-flex justify-content-between p-2">
+                <div v-for="contact in contacts" class="chat d-flex justify-content-between p-2">
                     <div class="left-chat-profile d-flex">
                         <div class="chat-profile-image">
-                            <img src="./assets/img/avatar_1.jpg" class="profile-img">
+                            <img :src="contact.avatar" class="profile-img">
                         </div>
                         <div class="chat-info px-2">
-                            <h5 class="m-0">Michele</h5>
+                            <h5 class="m-0">{{contact.name}}</h5>
                             <p class="m-0 color-shadegray fs-08">Ultimo messaggio inviato</p>
                         </div>
                     </div>
