@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #region utility */
+
+:root {
+    --background--body-top: #009688;
+    --background-body: #d9dbd4;
+    --top-headers: #eaeaea;
+    --headers-icons: #b1b1b1;
+    --desktop-notifications: #8edafc;
+    --toggle-desktop-notifications: #537b8e;
+    --user-messages: #d5f9ba;
+    --active-chat-user: #e9ebeb;
+    --write-message-bar: #f3eeea;
+}
+
+/* #endregion utility */
+
+/* #region main classes */
+
+.body-bg {
+    height: 100vh;
+    background: linear-gradient(180deg, #009688 20%, #D9DBD4 20%);
+}
+
+.main-container {
+    height: 90%;
+    background-color: blueviolet;
+}
+
+#left {
+    width: 35%;
+}
+
+#right {
+    width: 65%;
+}
+
+/* #endregion main classes */
+
