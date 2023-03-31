@@ -16,9 +16,9 @@
 </head>
 <body class="body-bg py-2">
     
-    <div id="app" class="main-container container p-0">
+    <div id="app" class="main-container container d-flex p-0">
 
-        <div id="left" class="mh-100"> 
+        <div id="left" class="h-100"> 
             <!-- left header and icons -->
             <div class="header-left d-flex justify-content-between">
                 <div class="left-profile d-flex align-items-center w-50">
@@ -69,7 +69,33 @@
         </div>
 
 
-        <div id="right"></div>
+        <div id="right">
+            <!-- infos of the active profile chat-->
+            <div class="active-profile-header d-flex justify-content-between p-2">
+                <div class="active-profile-info d-flex">
+                    <div>
+                        <img src="./assets/img/avatar_1.jpg" alt="" class="profile-img">
+                    </div>
+                    <div class="profile-info px-2">
+                        <h5 class="m-0">Michele</h5>
+                        <p class="m-0 color-shadegray fs-08">Ultimo accesso oggi alle 12:00</p>
+                    </div>
+                </div>
+                <div class="active-profile-utilities d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+
+            <div class="active-chat">
+
+            </div>
+
+            <div class="message-bar">
+                
+            </div>
+        </div>
 
 
 

@@ -10,16 +10,16 @@
     --background--body-top: #009688;
     --background-body: #d9dbd4;
     --top-headers: #eaeaea;
-    --headers-icons: #b1b1b1;
+    --headers-icons: #9b9a9a;
     --desktop-notifications: #61b7df;
-    --toggle-desktop-notifications: #537b8e;
+    --toggle-desktop-notifications: #3e6172;
     --user-messages: #d5f9ba;
     --active-chat-user: #e9ebeb;
     --write-message-bar: #f3eeea;
 }
 
 .color-shadegray {
-    color: var(--toggle-desktop-notifications);
+    color: var(--headers-icons);
 }
 
 .fs-07 {
@@ -55,10 +55,10 @@
 /* #endregion main classes */
 
 /* #region left */
+
 .header-left {
     height: 60px;
     background-color: var(--top-headers);
-    border-right: 1px solid var(--headers-icons) ;
 } 
 
 .profile-img {
@@ -72,6 +72,7 @@
 }
 
 .desktop-notifications {
+    height: 50px;
     background-color: var(--desktop-notifications);
 }
 
@@ -92,11 +93,13 @@
 }
 
 .searchbar {
+    height: 50px;
     padding: 0.5rem;
     background-color: var(--write-message-bar);
 }
 
 .chats {
+    height: calc(100% - 160px);
     overflow-y:scroll;
 }
 
@@ -104,3 +107,21 @@
     background-color: var(--active-chat-user);
 }
 /* #endregion left */
+
+/* #region right */
+
+.active-profile-header {
+    background-color: var(--top-headers);
+    height: 60px;
+    border-left: 1px solid var(--headers-icons) ;
+}
+
+.active-profile-utilities i {
+    padding-right: 1rem;
+    color: var(--headers-icons);
+}
+
+.active-chat {
+    height: calc(100% - 120px);
+}
+/* #endregion right */
