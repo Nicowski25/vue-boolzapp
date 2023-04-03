@@ -13,9 +13,10 @@
     --headers-icons: #9b9a9a;
     --desktop-notifications: #61b7df;
     --toggle-desktop-notifications: #3e6172;
-    --user-messages: #d5f9ba;
     --active-chat-user: #e9ebeb;
     --write-message-bar: #f3eeea;
+    --sent-messages: #b7fd85;
+    --recived-messages: white;
 }
 
 .color-shadegray {
@@ -41,7 +42,6 @@
 
 .main-container {
     height: 90%;
-    background-color: blueviolet;
 }
 
 #left {
@@ -123,14 +123,35 @@
 
 .active-chat {
     height: calc(100% - 120px);
+    background-image: url("../img/mine.jpg");
 }
 
-.message-bar {
+.sent-message { 
+    text-align: right;
+    display: flex;
+    justify-content: end;
+}
+
+.sent-message-text {
+    background-color: var(--sent-messages);
+}
+
+.received-message {
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.received-message-text {
+    background-color: var(--recived-messages);
+}
+
+.message-input {
     height: 60px;
     background-color: var(--write-message-bar);
 }
 
-.message-bar i {
+.message-input i {
     color: var(--headers-icons);
 }
 /* #endregion right */

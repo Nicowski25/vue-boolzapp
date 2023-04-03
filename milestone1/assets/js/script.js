@@ -3,7 +3,8 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      contacts: [
+        active_contact: 0,
+        contacts: [
         {
             name: 'Michele',
             avatar: 'assets/img/avatar_1.jpg',
