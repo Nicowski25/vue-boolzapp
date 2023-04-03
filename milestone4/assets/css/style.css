@@ -165,4 +165,8 @@
 .message-input i {
     color: var(--headers-icons);
 }
+
+.message-input i:hover {
+    color: var(--background--body-top);
+}
 /* #endregion right */
