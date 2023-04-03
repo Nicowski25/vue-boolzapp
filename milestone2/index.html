@@ -51,20 +51,22 @@
             </div>
             <!-- chats -->
             <div class="chats">
-                <div v-for="contact in contacts" class="chat d-flex justify-content-between p-2">
-                    <div class="left-chat-profile d-flex">
-                        <div class="chat-profile-image">
-                            <img :src="contact.avatar" class="profile-img">
+                <div class="chat" :class="index === activeContact ? 'left-active-chat' : ''" v-for="(contact, index) in contacts" @click="changeActiveChat(index)">
+                    <div class="d-flex justify-content-between p-2">
+                        <div class="left-chat-profile d-flex">
+                            <div class="chat-profile-image">
+                                <img :src="contact.avatar" class="profile-img">
+                            </div>
+                            <div class="chat-info px-2">
+                                <h5 class="m-0">{{contact.name}}</h5>
+                                <p class="m-0 color-shadegray fs-08">Ultimo messaggio inviato</p>
+                            </div>
                         </div>
-                        <div class="chat-info px-2">
-                            <h5 class="m-0">{{contact.name}}</h5>
-                            <p class="m-0 color-shadegray fs-08">Ultimo messaggio inviato</p>
+                        <div class="right-chat-hour d-flex align-items-start w-auto">
+                            <p class="color-shadegray fs-07">12:00</p>
                         </div>
-                    </div>
-                    <div class="right-chat-hour d-flex align-items-start w-auto">
-                        <p class="color-shadegray fs-07">12:00</p>
-                    </div>
-                </div>  
+                    </div>  
+                </div>
             </div>
         </div>
 
@@ -89,17 +91,22 @@
             </div>
             <!-- active chat messages -->
             <div class="active-chat p-3">
-                <div class="sent-message">
-                    <p class="sent-message-text">
-                        Hai portato a spasso il cane?
-                        <span class="color-shadegray fs-07">15:30</span>
-                    </p>
-                </div>
-                <div class="received-message">
-                    <p class="received-message-text">
-                        Tutto fatto!
-                        <span class="color-shadegray fs-07">16.15</span>
-                    </p>
+
+
+                <div class="message"  v-for="message in contacts[activeContact].messages">
+                    <div class="sent-message" v-if="message.status == 'sent'">
+                       <p class="sent-message-text">
+                           {{message.message}}
+                           <span class="color-shadegray fs-07">15:30</span>
+                       </p>
+                   </div>
+                   <div class="received-message" v-if="message.status == 'received'">
+                       <p class="received-message-text">
+                            {{message.message}}
+                           <span class="color-shadegray fs-07">16.15</span>
+                       </p>
+                   </div>
+
                 </div>
             </div>
             <!-- input form of message to send -->

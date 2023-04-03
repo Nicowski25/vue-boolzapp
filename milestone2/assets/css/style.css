@@ -104,7 +104,11 @@
 }
 
 .chat {
-    background-color: var(--active-chat-user);
+    background-color: var(--recived-messages);
+}
+
+.left-active-chat {
+    background-color: violet;
 }
 /* #endregion left */
 
@@ -144,6 +148,12 @@
 
 .received-message-text {
     background-color: var(--recived-messages);
+}
+
+.sent-message-text,
+.received-message-text {
+    border-radius: 0.5rem;
+    padding: 0.3rem;
 }
 
 .message-input {
