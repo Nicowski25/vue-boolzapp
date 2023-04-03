@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Boolzapp</title>
+</head>
+<body class="body-bg py-2">
+    
+    <div id="app" class="main-container container d-flex p-0">
+
+        <div id="left" class="h-100"> 
+            <!-- left header and icons -->
+            <div class="header-left d-flex justify-content-between">
+                <div class="left-profile d-flex align-items-center w-50">
+                    <img src="./assets/img/avatar_io.jpg" alt="" class="profile-img p-1">
+                    <h6 class="m-0">Sofia</h6>
+                </div>
+                <div class="right-profile-icons d-flex align-items-center justify-content-end w-50">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="right-icons">
+
+                </div>
+            </div>
+            <!-- left desktop notifications -->
+            <div class="desktop-notifications d-flex align-content-center py-2">
+                <div class="bell-icon d-flex align-items-center justify-content-center mx-2">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+                <div class="desktop-notifications-text">
+                    <h6 class="m-0">Ricevi notifiche di nuovi messaggi</h6>
+                    <p class="m-0 fs-08">Attiva notifiche desktop</p>
+                </div>
+            </div>
+            <!-- left search/start new chat -->
+            <div class="input-group searchbar">
+                <span class="input-group-text" id="searchChat"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control p-0 px-2" placeholder="Cerca o inizia una nuova chat">
+            </div>
+            <!-- chats -->
+            <div class="chats">
+                <div class="chat" :class="index === activeContact ? 'left-active-chat' : ''" v-for="(contact, index) in contacts" @click="changeActiveChat(index)">
+                    <div class="d-flex justify-content-between p-2">
+                        <div class="left-chat-profile d-flex">
+                            <div class="chat-profile-image">
+                                <img :src="contact.avatar" class="profile-img">
+                            </div>
+                            <div class="chat-info px-2">
+                                <h5 class="m-0">{{contact.name}}</h5>
+                                <p class="m-0 color-shadegray fs-08">Ultimo messaggio inviato</p>
+                            </div>
+                        </div>
+                        <div class="right-chat-hour d-flex align-items-start w-auto">
+                            <p class="color-shadegray fs-06">12:00</p>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+
+        <div id="right">
+            <!-- infos of the active profile chat-->
+            <div class="active-profile-header d-flex justify-content-between p-2">
+                <div class="active-profile-info d-flex">
+                    <div>
+                        <img src="./assets/img/avatar_1.jpg" alt="" class="profile-img">
+                    </div>
+                    <div class="profile-info px-2">
+                        <h5 class="m-0">Michele</h5>
+                        <p class="m-0 color-shadegray fs-08">Ultimo accesso oggi alle 12:00</p>
+                    </div>
+                </div>
+                <div class="active-profile-utilities d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </div>
+            <!-- active chat messages -->
+            <div class="active-chat p-3">
+
+
+                <div class="message"  v-for="message in contacts[activeContact].messages">
+                    <div class="sent-message" v-if="message.status == 'sent'">
+                       <p class="sent-message-text">
+                           {{message.message}}
+                           <span class="color-shadegray fs-06">15:30</span>
+                       </p>
+                   </div>
+                   <div class="received-message" v-if="message.status == 'received'">
+                       <p class="received-message-text">
+                            {{message.message}}
+                           <span class="color-shadegray fs-06">16.15</span>
+                       </p>
+                   </div>
+
+                </div>
+            </div>
+            <!-- input form of message to send -->
+            <div class="message-input d-flex align-items-center">
+                <i class="fa-regular fa-face-smile mx-3"></i>
+                <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="newMessageText" @keyup.enter="sendMessage()">
+                <i class="fa-solid fa-microphone mx-3"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

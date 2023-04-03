@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* #region utility */
+
+:root {
+    --background--body-top: #008069;
+    --background-body: #d9dbd4;
+    --top-headers: #eaeaea;
+    --headers-icons: #9b9a9a;
+    --desktop-notifications: #61b7df;
+    --toggle-desktop-notifications: #3e6172;
+    --active-chat-user: #e9ebeb;
+    --write-message-bar: #f3eeea;
+    --sent-messages: #b7fd85;
+    --recived-messages: white;
+}
+
+.color-shadegray {
+    color: var(--headers-icons);
+}
+
+.fs-06 {
+    font-size: 0.6rem;
+}
+
+.fs-08 {
+    font-size: 0.8rem;
+}
+
+/* #endregion utility */
+
+/* #region main classes */
+
+.body-bg {
+    height: 100vh;
+    background: linear-gradient(180deg, #009688 20%, #D9DBD4 20%);
+}
+
+.main-container {
+    height: 90%;
+}
+
+#left {
+    width: 35%;
+}
+
+#right {
+    width: 65%;
+}
+
+/* #endregion main classes */
+
+/* #region left */
+
+.header-left {
+    height: 60px;
+    background-color: var(--top-headers);
+} 
+
+.profile-img {
+    height: 50px;
+    border-radius: 100%;
+}
+
+.right-profile-icons i {
+    padding-right: 1rem;
+    color: var(--headers-icons);
+}
+
+.desktop-notifications {
+    height: 50px;
+    background-color: var(--desktop-notifications);
+}
+
+.bell-icon {
+    width: 40px;
+    color: var(--desktop-notifications);
+    background-color: var(--active-chat-user);
+    border-radius: 100%;
+}
+
+.desktop-notifications p {
+    color: var(--toggle-desktop-notifications);
+    text-decoration: underline;
+}
+
+.desktop-notifications h6 {
+    font-size: 0.9rem;
+}
+
+.searchbar {
+    height: 50px;
+    padding: 0.5rem;
+    background-color: var(--write-message-bar);
+}
+
+.chats {
+    height: calc(100% - 160px);
+    overflow-y:scroll;
+}
+
+.chat {
+    background-color: var(--recived-messages);
+}
+
+.left-active-chat {
+    background-color: var(--active-chat-user);
+}
+/* #endregion left */
+
+/* #region right */
+
+.active-profile-header {
+    background-color: var(--top-headers);
+    height: 60px;
+    border-left: 2px solid var(--background-body) ;
+}
+
+.active-profile-utilities i {
+    padding-right: 1rem;
+    color: var(--headers-icons);
+}
+
+.active-chat {
+    height: calc(100% - 120px);
+    background-image: url("../img/mine.jpg");
+    overflow-y: scroll;
+}
+
+.sent-message { 
+    text-align: right;
+    display: flex;
+    justify-content: end;
+}
+
+.sent-message-text {
+    background-color: var(--sent-messages);
+}
+
+.received-message {
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.received-message-text {
+    background-color: var(--recived-messages);
+}
+
+.sent-message-text,
+.received-message-text {
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+.message-input {
+    height: 60px;
+    background-color: var(--write-message-bar);
+}
+
+.message-input i {
+    color: var(--headers-icons);
+}
+/* #endregion right */
