@@ -4,6 +4,12 @@ createApp({
   data() {
     return {
         activeContact: 0,
+        newMessageText: '',
+        newMessage: {
+            date: '0',
+            MessageText: '',
+            status: 'sent'
+        },
         contacts: [
         {
             name: 'Michele',
@@ -172,6 +178,12 @@ createApp({
   methods: {
     changeActiveChat(i) {
         this.activeContact = i
+    },
+    sendMessage() {
+        this.contacts[this.activeContact].messages.push(this.newMessage)
     }
+  },
+  mounted() {
+    this.sendMessage
   }
 }).mount('#app')
