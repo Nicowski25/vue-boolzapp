@@ -5,11 +5,6 @@ createApp({
     return {
         activeContact: 0,
         newMessageText: '',
-        newMessage: {
-            date: '0',
-            MessageText: '',
-            status: 'sent'
-        },
         contacts: [
         {
             name: 'Michele',
@@ -180,7 +175,14 @@ createApp({
         this.activeContact = i
     },
     sendMessage() {
-        this.contacts[this.activeContact].messages.push(this.newMessage)
+        newMessage = {
+            date: '0',
+            message: '',
+            status: 'sent'
+        }
+        newMessage.message = this.newMessageText
+        this.contacts[this.activeContact].messages.push(newMessage)
+        this.newMessageText = ''
     }
   },
   mounted() {
