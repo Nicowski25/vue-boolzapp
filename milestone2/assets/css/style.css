@@ -23,8 +23,8 @@
     color: var(--headers-icons);
 }
 
-.fs-07 {
-    font-size: 0.7rem;
+.fs-06 {
+    font-size: 0.6rem;
 }
 
 .fs-08 {
@@ -108,7 +108,7 @@
 }
 
 .left-active-chat {
-    background-color: violet;
+    background-color: var(--active-chat-user);
 }
 /* #endregion left */
 
@@ -128,6 +128,7 @@
 .active-chat {
     height: calc(100% - 120px);
     background-image: url("../img/mine.jpg");
+    overflow-y: scroll;
 }
 
 .sent-message { 

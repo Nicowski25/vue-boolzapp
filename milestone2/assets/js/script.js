@@ -171,7 +171,7 @@ createApp({
   },
   methods: {
     changeActiveChat(i) {
-        this.activeContact == i
+        this.activeContact = i
     }
   }
 }).mount('#app')
