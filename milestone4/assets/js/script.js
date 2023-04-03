@@ -5,6 +5,7 @@ createApp({
     return {
         activeContact: 0,
         newMessageText: '',
+        searchQuery: [],
         contacts: [
         {
             name: 'Michele',
@@ -175,15 +176,17 @@ createApp({
         this.activeContact = i
     },
     sendMessage() {
-        newMessage = {
-            date: '0',
-            message: '',
-            status: 'sent'
+        if (this.newMessageText.split(' ').join('') != '') {
+            newMessage = {
+                date: '0',
+                message: '',
+                status: 'sent'
+            }
+            newMessage.message = this.newMessageText
+            this.contacts[this.activeContact].messages.push(newMessage)
+            this.newMessageText = ''
+            setTimeout(this.messageResponse, 1000)
         }
-        newMessage.message = this.newMessageText
-        this.contacts[this.activeContact].messages.push(newMessage)
-        this.newMessageText = ''
-        setTimeout(this.messageResponse, 1000)
     },
     messageResponse() {
         responseMessage = {
@@ -193,7 +196,7 @@ createApp({
         }
         this.contacts[this.activeContact].messages.push(responseMessage)
     }
-  },
+},
   mounted() {
     this.sendMessage
     this.messageResponse
