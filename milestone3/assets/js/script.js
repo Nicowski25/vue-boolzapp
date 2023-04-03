@@ -183,9 +183,19 @@ createApp({
         newMessage.message = this.newMessageText
         this.contacts[this.activeContact].messages.push(newMessage)
         this.newMessageText = ''
+        setTimeout(this.messageResponse, 1000)
+    },
+    messageResponse() {
+        responseMessage = {
+            date: '0',
+            message: 'Ok',
+            status: 'received'
+        }
+        this.contacts[this.activeContact].messages.push(responseMessage)
     }
   },
   mounted() {
     this.sendMessage
+    this.messageResponse
   }
 }).mount('#app')
