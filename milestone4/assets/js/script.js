@@ -190,7 +190,7 @@ createApp({
     },
     messageResponse() {
         responseMessage = {
-            date: '0',
+            date: '',
             message: 'Ok',
             status: 'received'
         }

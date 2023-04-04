@@ -74,6 +74,11 @@
     color: var(--headers-icons);
 }
 
+.right-profile-icons i:hover {
+    color: var(--background--body-top);
+}
+
+
 .desktop-notifications {
     height: 50px;
     background-color: var(--desktop-notifications);
@@ -113,6 +118,10 @@
 .left-active-chat {
     background-color: var(--active-chat-user);
 }
+
+.chats .chat:hover {
+    background-color: var(--active-chat-user);
+}
 /* #endregion left */
 
 /* #region right */
@@ -126,6 +135,10 @@
 .active-profile-utilities i {
     padding-right: 1rem;
     color: var(--headers-icons);
+}
+
+.active-profile-utilities i:hover {
+    color: var(--background--body-top);
 }
 
 .active-chat {
