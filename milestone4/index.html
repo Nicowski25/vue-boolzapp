@@ -51,7 +51,7 @@
             </div>
             <!-- chats -->
             <div class="chats">
-                <div class="chat" :class="index === activeContact ? 'left-active-chat' : ''" v-for="(contact, index) in contacts" @click="changeActiveChat(index)" :class="[contacts.contact.visible ? 'd-none' : '']">
+                <div class="chat" v-show="contact.visible" :class="index === activeContact ? 'left-active-chat' : ''" v-for="(contact, index) in contacts" @click="changeActiveChat(index)" >
                     <div class="d-flex justify-content-between p-2">
                         <div class="left-chat-profile d-flex">
                             <div class="chat-profile-image">
@@ -120,7 +120,7 @@
 
     </div>
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
