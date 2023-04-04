@@ -172,9 +172,11 @@ createApp({
     }
   },
   methods: {
+    //change the index oh the active chat to display 
     changeActiveChat(i) {
         this.activeContact = i
     },
+    //takes the message written by the user and send it to the active contact
     sendMessage() {
         if (this.newMessageText.split(' ').join('') != '') {
             newMessage = {
@@ -188,14 +190,16 @@ createApp({
             setTimeout(this.messageResponse, 1000)
         }
     },
+    //auto response from the contact after we send a message
     messageResponse() {
         responseMessage = {
-            date: '',
+            date: new Date().toLocaleString('it'),
             message: 'Ok',
             status: 'received'
         }
         this.contacts[this.activeContact].messages.push(responseMessage)
     },
+    //set the bool variable of visible in true/false if the user typed string is contained in contacts names
     searchContacts() {
         this.contacts.forEach(contact => {
             if (contact.name.toLowerCase().includes(this.userSearch.toLowerCase())) {
