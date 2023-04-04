@@ -47,11 +47,11 @@
             <!-- left search/start new chat -->
             <div class="input-group searchbar">
                 <span class="input-group-text" id="searchChat"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" class="form-control p-0 px-2" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" class="form-control p-0 px-2" placeholder="Cerca o inizia una nuova chat" v-model="userSearch" v-on:keyup="searchContacts()">
             </div>
             <!-- chats -->
             <div class="chats">
-                <div class="chat" :class="index === activeContact ? 'left-active-chat' : ''" v-for="(contact, index) in contacts" @click="changeActiveChat(index)">
+                <div class="chat" :class="index === activeContact ? 'left-active-chat' : ''" v-for="(contact, index) in contacts" @click="changeActiveChat(index)" :class="[contacts.contact.visible ? 'd-none' : '']">
                     <div class="d-flex justify-content-between p-2">
                         <div class="left-chat-profile d-flex">
                             <div class="chat-profile-image">
@@ -59,11 +59,11 @@
                             </div>
                             <div class="chat-info px-2">
                                 <h5 class="m-0">{{contact.name}}</h5>
-                                <p class="m-0 color-shadegray fs-08">Ultimo messaggio inviato</p>
+                                <p class="m-0 color-shadegray fs-08">{{ contact.messages[0].message }}</p>
                             </div>
                         </div>
                         <div class="right-chat-hour d-flex align-items-start w-auto">
-                            <p class="color-shadegray fs-06">12:00</p>
+                            <p class="color-shadegray fs-06"> 15:30</p>
                         </div>
                     </div>  
                 </div>
@@ -97,13 +97,13 @@
                     <div class="sent-message" v-if="message.status == 'sent'">
                        <p class="sent-message-text">
                            {{message.message}}
-                           <span class="color-shadegray fs-06">15:30</span>
+                           <span class="color-shadegray fs-06">{{message.date.slice(10,16)}}</span>
                        </p>
                    </div>
                    <div class="received-message" v-if="message.status == 'received'">
                        <p class="received-message-text">
                             {{message.message}}
-                           <span class="color-shadegray fs-06">16.15</span>
+                           <span class="color-shadegray fs-06">{{message.date.slice(10, 16)}}</span>
                        </p>
                    </div>
 

@@ -5,7 +5,7 @@ createApp({
     return {
         activeContact: 0,
         newMessageText: '',
-        searchQuery: [],
+        userSearch: '',
         contacts: [
         {
             name: 'Michele',
@@ -178,7 +178,7 @@ createApp({
     sendMessage() {
         if (this.newMessageText.split(' ').join('') != '') {
             newMessage = {
-                date: '0',
+                date: new Date().toLocaleString('it') ,
                 message: '',
                 status: 'sent'
             }
@@ -195,7 +195,15 @@ createApp({
             status: 'received'
         }
         this.contacts[this.activeContact].messages.push(responseMessage)
-    }
+    },
+    searchContacts() {
+        this.contacts.forEach(contact => {
+            if (!contact.name.includes(this.userSearch)) {
+                console.log(contact.name);
+                contact.visible = false;                   
+            } 
+        });
+    },
 },
   mounted() {
     this.sendMessage

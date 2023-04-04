@@ -31,6 +31,9 @@
     font-size: 0.8rem;
 }
 
+.d-none {
+    display: none;
+}
 /* #endregion utility */
 
 /* #region main classes */
